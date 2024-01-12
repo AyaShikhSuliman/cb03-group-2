@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="../static/css/main.css">
+  <title>Cook</title>
+</head>
+
+<body class="bgCook">
+  <div class="overlay"></div>
+  <section class="cookOrders">
+    <div class="container">
+      <table class="table align-middle table-sm table-striped m-0">
+        <thead class="table-dark">
+          <tr class="fixed">
+            <th scope="col">Order Number</th>
+            <th scope="col">Order description</th>
+            <th scope="col">Order Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <form action="{{ url_for('buttons')}}" method="post">
+            <tr>
+              <th scope="row">#1</th>
+              <td>
+                {{recent_order}}
+              </td>
+              <td>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="waiting" value="waiting">
+                  <label class="form-check-label" for="waiting">waiting</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inProgress"
+                    value="inProgress">
+                  <label class="form-check-label" for="inProgress">In Progress</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inOven" value="inOven">
+                  <label class="form-check-label" for="inOven">In Oven</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="Done" value="Done">
+                  <label class="form-check-label" for="Done">Done</label>
+                </div>
+              </td>
+            </tr>
+            <tr class="text-center">
+              <th scope="row"></th>
+              <td><button type="submit" id="wbtn" class="btn btn-warning">Send Status</button></td>
+              <td></td>
+            </tr>
+          </form>
+          <!--
+          <tr>
+            <th scope="row">#2</th>
+            {% for y in second_order %}
+            <td>
+              {{y|join(',')}}
+            </td>
+            {% endfor %}
+            <td><button type="button" id="wbtn" class="btn btn-warning"></button></td>
+          </tr>
+           
+          <tr>
+            <th scope="row"></th>
+            <td><button type="submit" id="wbtn" class="btn btn-warning">ok</button></td>
+            <td><button type="button" id="wbtn" class="btn btn-warning"></button></td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td> </td>
+            <td><button type="button" id="wbtn" class="btn btn-warning"></button></td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td> </td>
+            <td><button type="button" id="wbtn" class="btn btn-warning"></button></td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td> </td>
+            <td><button type="button" id="wbtn" class="btn btn-warning"></button></td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td> </td>
+            <td><button type="button" id="wbtn" class="btn btn-warning"></button></td>
+          </tr>
+          -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <!--
+  <script>
+    var myBtn = document.querySelectorAll("button")
+    remo = document.querySelector(".t");
+
+    for (let i = 0; i < 100; i++) {
+      myBtn[i].innerHTML = "Waiting";
+
+      myBtn[i].onclick = function () {
+        switch (myBtn[i].innerHTML) {
+          case "Waiting":
+            myBtn[i].innerHTML = "{{step1}}"
+            myBtn[i].classList.add("btn-success")
+            myBtn[i].classList.remove("btn-warning")
+            break;
+          case "In progress":
+            myBtn[i].innerHTML = "{{step2}}"
+            myBtn[i].classList.add("btn-danger")
+            myBtn[i].classList.remove("btn-success")
+            break;
+          case "In Oven":
+            myBtn[i].innerHTML = "{{step3}}"
+            myBtn[i].classList.add("btn-secondary")
+            myBtn[i].classList.remove("btn-danger")
+            myBtn.setAttribute("style", "cursor:default;");
+            /*remo.setAttribute("style", "display:none;"); */
+            break;
+          default:
+            myBtn.innerHTML == "waiting"
+        }
+      };
+
+    }
+  </script>
+  -->
+</body>
+
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>menu</title>
+</head>
+
+<body>
+    <div class="depo">
+
+        <div class="row">
+
+            <form action="{{ url_for('menu')}}" method="post">
+
+                <div class="col-8 menu pt-5">
+
+                    <p class="mt-5 text-center white">Far far away, behind
+                        the
+                        word mountains, far
+                        from the countries Vokalia and <br> Consonantia,
+                        there
+                        lives Mario.</p>
+
+
+                    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+                        <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true"
+                            data-bs-delay="2000">
+                            <div class="toast-header">
+                                <strong class="me-auto">Order Confirmation</strong>
+                                <small>just now</small>
+                                <button type="button" class="btn-close" data-bs-dismiss="toast"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="toast-body">
+                                your order has been placed successfully.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!--Pizza Margharita-->
+                            <div class="card mb-3">
+                                <div class="row g-0">
+                                    <div class="col-md-2">
+                                        <img src="../static/images/pizza1.png" width="100px" class="img-fluid
+                                                rounded-start" alt="...">
+                                    </div>
+                                    <div class="col-md-7">
+                                        <div class="card-body">
+                                            <label for="quantityM" class="card-title">PIZZA MARGARITHA</label>
+                                            <p class="card-text">Tomato sauce, extra mozzarella & pizza herbs</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+
+                                        <input type="text" name="pMargharita" value="20.00€" id="price">
+                                        <input type="text" name="nMargharita" value="PIZZA MARGHERITA" id="description">
+                                        <input type="number" id="Mquantity" name="qMargharita" min="0" max="10" step="1"
+                                            value="0">
+
+                                        <button type="button" onclick="margharita()" class="btn btn-danger"
+                                            id="btnMargharita">+</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!--PIZZA Funghi-->
+                            <div class="card mb-3">
+                                <div class="row g-0">
+                                    <div class="col-md-2">
+                                        <img src="../static/images/pizza2.png" width="100px" class="img-fluid
+                                                rounded-start" alt="...">
+                                    </div>
+                                    <div class="col-md-7">
+                                        <div class="card-body">
+                                            <label for="quantityF" class="card-title">PIZZA FUNGHI</label>
+                                            <p class="card-text">Tomato sauce, mozzarella, mushrooms & pizza herbs</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+
+                                        <input type="text" name="priceF" value="18.00€" id="price">
+                                        <input type="text" name="pizzaFunghi" value="PIZZA Funghi" id="description">
+                                        <input type="number" id="Fquantity" name="quantityF" min="0" max="10" step="1"
+                                            value="0">
+                                        <button type="button" onclick="funghi()" class="btn btn-danger"
+                                            id="btnFunghi">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--PIZZA Meatlover-->
+                            <div class="card mb-3">
+                                <div class="row g-0">
+                                    <div class="col-md-2">
+                                        <img src="../static/images/pizza3.png" width="100px" class="img-fluid
+                                                rounded-start" alt="...">
+                                    </div>
+                                    <div class="col-md-7">
+                                        <div class="card-body">
+                                            <label for="qMeatlover" class="card-title">PIZZA AMERICAN SUPREME MEATLOVER</label>
+                                            <p class="card-text">BBQ sauce, mozzarella, pepperoni, minced beef, chicken kebab</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+
+                                        <input type="text" name="pMeatlover" value="16.00€" id="price">
+                                        <input type="text" name="pizzaMeatlover" value="PIZZA MEATLOVER"
+                                            id="description">
+                                        <input type="number" id="mlquantity" name="qMeatlover" min="0" max="10" step="1"
+                                            value="0">
+                                        <button type="button" onclick="meatlover()" class="btn btn-danger"
+                                            id="btnFunghi">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--PIZZA Shoarma-->
+                            <div class="card mb-3">
+                                <div class="row g-0">
+                                    <div class="col-md-2">
+                                        <img src="../static/images/pizza4.png" width="100px" class="img-fluid
+                                                rounded-start" alt="...">
+                                    </div>
+                                    <div class="col-md-7">
+                                        <div class="card-body">
+                                            <label for="qShoarma" class="card-title">PIZZA SHOARMA</label>
+                                            <p class="card-text">Tomato sauce, mozzarella, shoarma & a swirl of garlic sauce.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+
+                                        <input type="text" name="pShoarma" value="17.00€" id="price">
+                                        <input type="text" name="pizzaShoarma" value="PIZZA SHOARMA" id="description">
+                                        <input type="number" id="squantity" name="qShoarma" min="0" max="10" step="1"
+                                            value="0">
+                                        <button type="button" onclick="shoarma()" class="btn btn-danger"
+                                            id="btnShoarma">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--PIZZA VEGGI-->
+                            <div class="card mb-3">
+                                <div class="row g-0">
+                                    <div class="col-md-2">
+                                        <img src="../static/images/pizza5.png" width="100px" class="img-fluid
+                                                rounded-start" alt="...">
+                                    </div>
+                                    <div class="col-md-7">
+                                        <div class="card-body">
+                                            <label for="qVeggi" class="card-title">PIZZA VEGGI
+                                            </label>
+                                            <p class="card-text">Tomato sauce, mozzarella, mushrooms, bell pepper, onion</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+
+                                        <input type="text" name="pVeggi" value="14.00€" id="price">
+                                        <input type="text" name="pizzaVeggi" value="PIZZA VEGGI" id="description">
+                                        <input type="number" id="vquantity" name="qVeggi" min="0" max="10" step="1"
+                                            value="0">
+                                        <button type="button" onclick="veggi()" class="btn btn-danger"
+                                            id="btnVeggi">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!--Order details-->
+                <div class="col-4 details pl-0 pr-0">
+                    <div class="card">
+                        <img src="../static/images/mario.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Order
+                                details:</h5>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item wrka">
+                                <p id="tMargharita"></p>
+                                <p id="tFunghi"></p>
+                                <p id="tMeatlover"></p>
+                                <p id="tShoarma"></p>
+                                <p id="tveggi"></p>
+                            </li>
+                        </ul>
+                        <div class="card-body">
+
+                            <button type="submit" class="btn btn-warning">Order</button>
+                            <a href="#" class="btn btn-danger" id="toastbtn">Confirm</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script>
+
+        function margharita() {
+            var quantity = document.getElementById("Mquantity").value;
+            var price = "€" + (quantity * 20);
+            text = document.getElementById("tMargharita").innerHTML = quantity + "x" + " PIZZA MARGHERITA = " + price;
+        }
+
+        function funghi() {
+            var quantity = document.getElementById("Fquantity").value;
+            var price = "€" + (quantity * 18);
+            text = document.getElementById("tFunghi").innerHTML = quantity + "x" + " PIZZA FUNGHI = " + price;
+        }
+
+        function meatlover() {
+            var quantity = document.getElementById("mlquantity").value;
+            var price = "€" + (quantity * 16);
+            text = document.getElementById("tMeatlover").innerHTML = quantity + "x" + " PIZZA MEATLOVER = " + price;
+        }
+
+        function shoarma() {
+            var quantity = document.getElementById("squantity").value;
+            var price = "€" + (quantity * 17);
+            text = document.getElementById("tShoarma").innerHTML = quantity + "x" + " PIZZA SHOARMA = " + price;
+        }
+
+        function veggi() {
+            var quantity = document.getElementById("vquantity").value;
+            var price = "€" + (quantity * 14);
+            text = document.getElementById("tveggi").innerHTML = quantity + "x" + " PIZZA SHOARMA = " + price;
+        }
+
+        document.getElementById("toastbtn").onclick = function () {
+            var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+            var toastList = toastElList.map(function (toastEl) {
+                return new bootstrap.Toast(toastEl)
+            })
+            toastList.forEach(toast => toast.show())
+        }
+
+
+    </script>
+</body>
+
+</html>
